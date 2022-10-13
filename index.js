@@ -6,6 +6,7 @@ const linkHeader = document.querySelectorAll("ul li");
 const logo = document.querySelector(".img-dark-version");
 const loupe = document.querySelector(".fa-magnifying-glass");
 const arrows = document.querySelectorAll(".imgArrow");
+const openListe = document.querySelectorAll(".linkOpenListe");
 
 window.addEventListener("scroll", swapColorHeader);
 
@@ -24,6 +25,9 @@ function swapColorHeader() {
     arrows.forEach((arrow) => {
       arrow.style.filter = "brightness(1)";
     });
+    openListe.forEach((item) => {
+      item.classList.remove("swapWhiteLinks");
+    });
   }
   if (scrollY > 0) {
     header.classList.add("swapWhiteHeader");
@@ -37,6 +41,9 @@ function swapColorHeader() {
     loupe.classList.add("loupe-dark-version");
     arrows.forEach((arrow) => {
       arrow.style.filter = "brightness(0)";
+    });
+    openListe.forEach((item) => {
+      item.classList.add("swapWhiteLinks");
     });
   }
 }
