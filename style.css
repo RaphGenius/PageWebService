@@ -17,6 +17,7 @@ body {
   right: 0;
   background-color: #011538;
   color: white;
+  transition: 500ms ease all;
 }
 .container {
   position: relative;
@@ -34,8 +35,14 @@ body {
 .header-left img {
   width: 100%;
   position: absolute;
+  transition: 400ms all ease;
 }
-
+.img-light-version {
+  opacity: 1;
+}
+.img-dark-version {
+  opacity: 0;
+}
 .header-right {
   display: flex;
   align-items: center;
@@ -49,6 +56,7 @@ nav ul li {
   margin-right: 50px;
   cursor: pointer;
   position: relative;
+  font-weight: bold;
 }
 nav ul li::after {
   content: "";
@@ -60,26 +68,33 @@ nav ul li::after {
   left: 0;
   transform-origin: left;
   transform: scaleX(0);
-  transition: transform 200ms ease-in-out;
+  opacity: 0.5;
+  transition: opacity 400ms ease, transform 400ms ease-in-out;
 }
 nav ul li:hover::after {
   transform: scaleX(1);
+  opacity: 1;
 }
-.arrow::before {
-  content: "";
+.imgArrow {
   position: absolute;
-  background-image: url("/ressources/right-arrow-white.png");
-  object-fit: cover;
-  background-size: 50px;
-  width: 50px;
-  height: 50px;
-  transform: scale(0.4) rotate(90deg);
-  top: -10px;
-  right: -48px;
+  filter: brightness(1);
+  transform: rotate(90deg);
+  width: 20px;
+  bottom: 2px;
+  right: -33px;
+  transform: 400ms all ease;
 }
+
 .client-group-btn i {
   width: 25px;
   margin-right: 20px;
+  transition: 400ms ease all;
+}
+.loupe-dark-version {
+  color: #011538;
+}
+.client-group-btn i:hover {
+  color: #0063dc;
 }
 .client-group-btn {
   cursor: pointer;
@@ -88,13 +103,15 @@ nav ul li:hover::after {
 }
 .client-group-btn a {
   font-size: 18px;
-  color: white;
   text-decoration: none;
-  border: 2px solid white;
   padding: 0.7em 1.2em;
   font-weight: bold;
-  transition: all 200ms ease;
+  transition: all 400ms ease;
   text-transform: uppercase;
+}
+.btnContact {
+  color: white;
+  border: 2px solid white;
 }
 .client-group-btn a:hover:not(:nth-child(2)) {
   background-color: white;
@@ -105,7 +122,7 @@ nav ul li:hover::after {
   background-color: #0063dc;
   color: white;
   border: none;
-  transition: all 200ms ease;
+  transition: all 400ms ease;
 }
 .client-group-btn :nth-child(2):hover {
   opacity: 0.5;
@@ -113,8 +130,19 @@ nav ul li:hover::after {
 .client-group-btn a:not(:nth-child(4)) {
   margin-right: 20px;
 }
+
+.swapWhiteHeader {
+  background-color: white;
+}
+.swapWhiteBtns {
+  border: 2px solid #011538;
+  color: #011538;
+}
+.swapWhiteLinks {
+  color: #011538;
+}
 section {
-  height: 100vh;
+  height: 2000px;
   width: 100%;
   background-color: #011538;
 }
