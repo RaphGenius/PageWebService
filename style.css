@@ -20,6 +20,7 @@ body {
 
 .header {
   position: fixed;
+  top: 0;
   left: 0;
   right: 0;
   background-color: #011538;
@@ -148,11 +149,7 @@ nav ul {
 .swapWhiteLinks {
   color: #011538;
 }
-section {
-  height: 2000px;
-  width: 100%;
-  background-color: #011538;
-}
+
 .sous-liste {
   position: absolute;
   display: none;
@@ -180,4 +177,47 @@ section {
 }
 .sous-item:hover {
   opacity: 0.8;
+}
+
+.main {
+  position: relative;
+  z-index: -2;
+  margin-top: 150px;
+}
+.article1 {
+  position: relative;
+}
+.containerImg {
+  position: relative;
+}
+.title {
+  position: absolute;
+  top: 50%;
+  font-size: 3em;
+  color: white;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.title::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  left: 0;
+  bottom: 0;
+  transform-origin: center;
+  transform: scaleX(0);
+  animation: underlineTitle 500ms 6000ms forwards;
+}
+@keyframes underlineTitle {
+  to {
+    transform: scaleX(1);
+  }
+}
+.meduse {
+  width: 100%;
+  object-fit: cover;
+  max-height: 1000px;
 }

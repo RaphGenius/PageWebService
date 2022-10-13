@@ -47,3 +47,21 @@ function swapColorHeader() {
     });
   }
 }
+
+const title = document.querySelector(".title");
+const text = "Lorem ipsum dolor sit amet.";
+
+function typewriter(text, index) {
+  if (index === text.length) {
+  }
+  if (index < text.length) {
+    setTimeout(() => {
+      title.textContent += text[index];
+      typewriter(text, index + +1);
+    }, 200);
+  }
+}
+
+setTimeout(() => {
+  typewriter(text, 0);
+}, 300);
