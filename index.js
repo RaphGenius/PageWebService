@@ -65,3 +65,13 @@ function typewriter(text, index) {
 setTimeout(() => {
   typewriter(text, 0);
 }, 300);
+
+const cards = document.querySelectorAll(".card");
+cards.forEach((card) => {
+  card.addEventListener("click", truc);
+});
+
+function truc() {
+  console.log("truc");
+}
+console.log(cards);
