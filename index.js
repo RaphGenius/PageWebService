@@ -67,11 +67,22 @@ setTimeout(() => {
 }, 300);
 
 const cards = document.querySelectorAll(".card");
-cards.forEach((card) => {
-  card.addEventListener("click", truc);
+
+const intersectionObserver = new IntersectionObserver(handleIntersect, {
+  rootMargin: "-10%",
 });
 
-function truc() {
-  console.log("truc");
+cards.forEach((card) => {
+  intersectionObserver.observe(card);
+});
+
+function handleIntersect(entries) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+      intersectionObserver.unobserve(entry.target);
+    } else if (!entry.isIntersecting) {
+      entry.target.classList.remove("active");
+    }
+  });
 }
-console.log(cards);

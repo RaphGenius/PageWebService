@@ -259,6 +259,11 @@ nav ul {
   display: flex;
   align-items: center;
   overflow: hidden;
+  transition: 500ms ease transform;
+  transform: scale(0);
+}
+.card.active {
+  transform: scale(1);
 }
 .card1::before {
   content: "";
