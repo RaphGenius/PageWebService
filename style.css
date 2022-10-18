@@ -25,6 +25,7 @@ body {
   color: white;
   transition: 500ms ease all;
   z-index: 500;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 .container {
   position: relative;
@@ -361,7 +362,7 @@ nav ul {
 .card-content {
   position: absolute;
   color: wheat;
-  top: 255px;
+  top: 240px;
   transition: 200ms all cubic-bezier(0.46, 0.22, 0.91, 0.99);
 }
 .card:hover .card-content {
@@ -371,10 +372,15 @@ nav ul {
   display: flex;
   align-items: center;
 }
+.card-content-title i {
+  color: white;
+  font-size: 50px;
+}
 .card-content-title h3 {
   font-size: 1.2em;
   font-weight: bold;
   margin-left: 20px;
+  color: white;
 }
 .card-content-description {
   margin-top: 1em;
@@ -388,4 +394,115 @@ nav ul {
 
 .card:hover {
   background-color: rgba(255, 0, 0, 0.1);
+}
+
+.article3 {
+  margin-top: 500px;
+  max-width: 90%;
+  margin: 5rem auto 5rem;
+}
+.article3 h2 {
+  display: block;
+  position: relative;
+  font-size: 2em;
+  margin-left: 30px;
+  color: #011538;
+  margin-bottom: 6rem;
+}
+
+.article3 h2::before {
+  content: "";
+  position: absolute;
+  top: 16px;
+  left: -28px;
+  width: 20px;
+  height: 20px;
+  background-color: #0063dc;
+}
+
+.container-formation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+.formation-text,
+.formation-img {
+  width: 50%;
+  height: 400px;
+}
+
+.formation-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.formation-img {
+  transform: translateX(-100px);
+  transition: 200ms ease-in all;
+  opacity: 0;
+}
+.formation-text {
+  padding-right: 10%;
+}
+.formation-img.active {
+  transform: translateX(0px);
+  opacity: 1;
+}
+.formation-text.active {
+  transform: translateX(0px);
+  opacity: 1;
+}
+.formation-text p {
+  display: block;
+}
+.formation-content1 {
+  font-size: 1.5em;
+  color: #011538;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+.formation-content2 {
+  font-size: 1em;
+  margin-bottom: 1em;
+}
+.formation-content2 em {
+  font-weight: bold;
+}
+.formation-content3 {
+  font-size: 0.8em;
+}
+footer {
+  background-color: #011538;
+  color: white !important;
+  width: 100%;
+  padding-left: 20px;
+  padding-bottom: 4em;
+}
+.footer-img {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 2em;
+}
+.footer-img img {
+  width: 100%;
+  object-fit: cover;
+}
+footer ul li {
+  cursor: pointer;
+  color: white !important;
+  line-height: 2em;
+  transition: 200ms all ease-in-out;
+}
+footer ul li a:hover {
+  color: #0063dc !important;
+}
+.container-footer-info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 80%;
+}
+.container-footer-info div {
+  width: 30%;
 }

@@ -49,11 +49,9 @@ function swapColorHeader() {
 }
 
 const title = document.querySelector(".title");
-const text = "Lorem ipsum dolor sit amet.";
+const text = "Decouvrez les fonds marins";
 
 function typewriter(text, index) {
-  if (index === text.length) {
-  }
   if (index < text.length) {
     setTimeout(() => {
       title.textContent += text[index];
@@ -68,19 +66,40 @@ setTimeout(() => {
 
 const cards = document.querySelectorAll(".card");
 
-const intersectionObserver = new IntersectionObserver(handleIntersect, {
+const intersectionObserverCard = new IntersectionObserver(handleIntersect, {
   rootMargin: "-10%",
 });
 
 cards.forEach((card) => {
-  intersectionObserver.observe(card);
+  intersectionObserverCard.observe(card);
 });
 
 function handleIntersect(entries) {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.classList.add("active");
-      intersectionObserver.unobserve(entry.target);
+      /* intersectionObserverCard.unobserve(entry.target); */
+    } else if (!entry.isIntersecting) {
+      entry.target.classList.remove("active");
+    }
+  });
+}
+
+const formationContent = [document.querySelector(".formation-img")];
+
+const intersectionObserverFormationContent = new IntersectionObserver(
+  handleFormationIntersect,
+  { rootMargin: "-5%" }
+);
+
+formationContent.forEach((el) => {
+  intersectionObserverFormationContent.observe(el);
+  console.log(el);
+});
+function handleFormationIntersect(entries) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
     } else if (!entry.isIntersecting) {
       entry.target.classList.remove("active");
     }
