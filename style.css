@@ -59,6 +59,66 @@ body {
 nav ul {
   display: flex;
 }
+.burger {
+  color: white;
+  font-size: 30px;
+  margin-right: 1em;
+  display: none;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.container-nav-resp {
+  display: block;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100vh;
+  background-color: #0063dc;
+  padding: 2em;
+  font-size: 1.5em;
+  transition: 100ms ease-in all;
+  transform: translateX(100%);
+}
+.container-nav-resp.active {
+  display: block;
+  transition: 100ms ease-in all;
+  transform: translateX(0px);
+}
+.top-nav-resp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1em;
+  font-weight: bold;
+}
+.top-nav-resp i {
+  transform: scale(1.5);
+  cursor: pointer;
+}
+.body-nav-resp {
+  margin-top: 1em;
+}
+.body-nav-resp h3 {
+  font-weight: bold;
+  font-size: 1em;
+  margin-bottom: 0.5em;
+}
+
+.top-nav-resp a:hover,
+.body-nav-resp a:hover {
+  color: #011538;
+}
+@media (max-width: 1550px) {
+  nav ul {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+}
+
 .animationDown {
   list-style-type: none;
   margin-right: 50px;
@@ -357,7 +417,7 @@ nav ul {
   transition: 200ms all ease;
 }
 .card:hover.card::before {
-  opacity: 0.8;
+  opacity: 0.3;
 }
 .card-content {
   position: absolute;
@@ -367,6 +427,9 @@ nav ul {
 }
 .card:hover .card-content {
   top: 50%;
+}
+.content-card a {
+  font-weight: bold;
 }
 .card-content-title {
   display: flex;
@@ -390,10 +453,6 @@ nav ul {
   color: #0063dc;
   display: block;
   margin-top: 1em;
-}
-
-.card:hover {
-  background-color: rgba(255, 0, 0, 0.1);
 }
 
 .article3 {
@@ -489,7 +548,6 @@ footer {
   object-fit: cover;
 }
 footer ul li {
-  cursor: pointer;
   color: white !important;
   line-height: 2em;
   transition: 200ms all ease-in-out;
@@ -505,4 +563,19 @@ footer ul li a:hover {
 }
 .container-footer-info div {
   width: 30%;
+}
+@media (max-width: 1000px) {
+  .navbar {
+    order: 2;
+  }
+  .client-group-btn i {
+    order: 3;
+    margin-left: 10px;
+  }
+  .client-group-btn a {
+    font-size: 12px;
+  }
+  .header-left {
+    margin-right: 50px;
+  }
 }

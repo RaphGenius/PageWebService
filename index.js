@@ -7,7 +7,7 @@ const logo = document.querySelector(".img-dark-version");
 const loupe = document.querySelector(".fa-magnifying-glass");
 const arrows = document.querySelectorAll(".imgArrow");
 const openListe = document.querySelectorAll(".linkOpenListe");
-
+const burgerBtn = document.querySelector(".burger");
 window.addEventListener("scroll", swapColorHeader);
 
 function swapColorHeader() {
@@ -28,6 +28,7 @@ function swapColorHeader() {
     openListe.forEach((item) => {
       item.classList.remove("swapWhiteLinks");
     });
+    burgerBtn.style.color = "white";
   }
   if (scrollY > 0) {
     header.classList.add("swapWhiteHeader");
@@ -45,6 +46,8 @@ function swapColorHeader() {
     openListe.forEach((item) => {
       item.classList.add("swapWhiteLinks");
     });
+    burgerBtn.style.color = "black";
+    burgerBtn.style.transition = "200ms all ease";
   }
 }
 
@@ -105,3 +108,13 @@ function handleFormationIntersect(entries) {
     }
   });
 }
+
+const navBarResp = document.querySelector(".container-nav-resp");
+const closeNavBarResp = document.querySelector(".top-nav-resp i");
+burgerBtn.addEventListener("click", () => {
+  navBarResp.classList.toggle("active");
+});
+
+closeNavBarResp.addEventListener("click", () => {
+  navBarResp.classList.remove("active");
+});
