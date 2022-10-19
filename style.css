@@ -576,6 +576,7 @@ footer ul li a:hover {
     margin-left: 10px;
   }
   .client-group-btn a {
+    text-align: center;
     font-size: 10px;
   }
   .header-left {
@@ -633,5 +634,33 @@ footer ul li a:hover {
     margin-bottom: 2em;
     border-bottom: 2px solid white;
     padding-bottom: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .client-group-btn {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .client-group-btn i {
+    z-index: -2;
+    transform: translateX(130px);
+  }
+  .client-group-btn a:not(:nth-child(4)) {
+    margin-right: 0;
+  }
+  .client-group-btn a {
+    width: 150px;
+    margin-right: none;
+    text-align: center;
+  }
+  .burger {
+    margin-left: 30px;
+  }
+  .container-nav-resp {
+    width: 100%;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
   }
 }
